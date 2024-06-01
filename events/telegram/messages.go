@@ -19,7 +19,7 @@ const (
 	msgNoSavedMovies   = "You have no saved Movies 🙊"
 	msgNoFoundMovies   = "Unfortunately I couldn't find this movie 🙊"
 	msgSaved          = " \U0001F3A5 Saved!  \U0001F4BE"
-	msgAlreadyExists  = "You have already have this page in your list 🤗"
+	msgAlreadyExists  = "You have already have this movie in your list 🤗"
 	msgWasDeleted = " \U0001F4E4 Was deleted"
 	msgToDelete = "To delete this  \U0001F6AB"
 )

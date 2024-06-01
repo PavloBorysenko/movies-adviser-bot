@@ -73,9 +73,9 @@ func (s *Storage) GetAll(ctx context.Context, userName string, ftype string) ([]
 func (s *Storage) PickLast(ctx context.Context, userName string, ftype string) (*storage.Movie, error) {
 	q := `SELECT title FROM movies WHERE user_name = ? AND type = ? ORDER BY Timestamp LIMIT 1`
 
-	var url string
+	var movie string
 
-	err := s.db.QueryRowContext(ctx, q, userName, ftype).Scan(&url)
+	err := s.db.QueryRowContext(ctx, q, userName, ftype).Scan(&movie)
 	if err == sql.ErrNoRows {
 		return nil, storage.ErrNoSavedMovies
 	}
@@ -84,7 +84,7 @@ func (s *Storage) PickLast(ctx context.Context, userName string, ftype string) (
 	}
 
 	return &storage.Movie{
-		Title:      url,
+		Title:      movie,
 		UserName: userName,
 		Type: ftype,
 	}, nil

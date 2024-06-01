@@ -77,7 +77,7 @@ func (p *Processor) doCmd(text string, chatID int, username string) error {
 }
 
 func (p *Processor) savePage(chatID int, pageURL string, username string, ftype string) (err error) {
-	defer func() { err = e.WrapIfErr("can't do command: save page", err) }()
+	defer func() { err = e.WrapIfErr("can't do command: save movie", err) }()
 
 	movie := &storage.Movie{
 		Title:      pageURL,
