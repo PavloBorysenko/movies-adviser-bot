@@ -68,7 +68,7 @@ func (p *Processor) doCmd(text string, chatID int, username string) error {
 	case FindCmd:
 		return p.searchAllType(chatID, username, message)
 	case DeleteFilmCmd:
-		return p.deleteOne(chatID, username, strings.TrimSpace(message), ftype)	
+		return p.deleteOne(chatID, username, messages, ftype)	
 	case DeleteSeriesCmd:
 		return p.deleteOne(chatID, username, message, ftype)	
 	default:
